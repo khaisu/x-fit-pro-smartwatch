@@ -4,14 +4,21 @@
     <title>Contact - X-FIT Pro</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
+<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="index.html">X-FIT Pro</a>
+        <a class="navbar-brand fw-bold" href="index.html">X-FIT Pro</a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
@@ -27,93 +34,69 @@
     </div>
 </nav>
 
-<section class="py-5">
+<!-- CONTACT SECTION -->
+<section class="py-5 bg-light fade-in">
     <div class="container">
-        <h2 class="text-center mb-4">Contact / Feedback</h2>
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Get In Touch</h2>
+            <p class="text-muted">
+                Have questions about <strong>X-FIT Pro</strong>?  
+                Our team is ready to assist you.
+            </p>
+        </div>
 
         <div class="row justify-content-center">
-            <div class="col-md-6">
-                <form action="https://formspree.io/f/meelyjoy" method="POST">
-                    
-                    <div class="mb-3">
-                        <label class="form-label">Full Name</label>
-                        <input type="text" name="name" class="form-control" required>
-                    </div>
+            <div class="col-lg-6 col-md-8">
 
-                    <div class="mb-3">
-                        <label class="form-label">Email Address</label>
-                        <input type="email" name="email" class="form-control" required>
-                    </div>
+                <div class="card shadow-lg border-0 p-4 contact-card">
+                    <form action="https://formspree.io/f/meelyjoy" method="POST">
 
-                    <div class="mb-3">
-                        <label class="form-label">Message</label>
-                        <textarea name="message" class="form-control" rows="4" required></textarea>
-                    </div>
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold">Full Name</label>
+                            <input type="text" name="name" class="form-control form-control-lg" required>
+                        </div>
 
-                    <button type="submit" class="btn btn-primary w-100">
-                        Send Message
-                    </button>
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold">Email Address</label>
+                            <input type="email" name="email" class="form-control form-control-lg" required>
+                        </div>
 
-                </form>
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold">Message</label>
+                            <textarea name="message" class="form-control form-control-lg" rows="4" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-lg w-100">
+                            <i class="bi bi-send-fill me-2"></i>
+                            Send Message
+                        </button>
+
+                    </form>
+                </div>
+
             </div>
         </div>
     </div>
 </section>
 
+<!-- FOOTER -->
 <footer class="bg-dark text-white text-center p-4">
-    <p>© 2026 X-FIT Pro Smartwatch</p>
+    <p class="mb-0">© 2026 X-FIT Pro Smartwatch</p>
 </footer>
 
+<!-- Bootstrap JS (ONLY ONCE!) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
+<!-- Fade-in Script (ONLY ONCE!) -->
 <script>
     const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.3 };
 
-    const appearOptions = {
-        threshold: 0.3
-    };
-
-    const appearOnScroll = new IntersectionObserver(function(
-        entries,
-        appearOnScroll
-    ) {
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
         entries.forEach(entry => {
-            if (!entry.isIntersecting) {
-                return;
-            } else {
-                entry.target.classList.add('show');
-                appearOnScroll.unobserve(entry.target);
-            }
-        });
-    }, appearOptions);
-
-    faders.forEach(fader => {
-        appearOnScroll.observe(fader);
-    });
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-<script>
-    const faders = document.querySelectorAll('.fade-in');
-
-    const appearOptions = {
-        threshold: 0.3
-    };
-
-    const appearOnScroll = new IntersectionObserver(function(
-        entries,
-        appearOnScroll
-    ) {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) {
-                return;
-            } else {
-                entry.target.classList.add('show');
-                appearOnScroll.unobserve(entry.target);
-            }
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('show');
+            observer.unobserve(entry.target);
         });
     }, appearOptions);
 
