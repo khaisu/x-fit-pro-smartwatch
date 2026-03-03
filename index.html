@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>X-FIT Pro Smartwatch</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">X-FIT Pro</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link active" href="index.html">Home</a>
+                <a class="nav-link" href="features.html">Features</a>
+                <a class="nav-link" href="contact.html">Contact</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<section class="hero text-white d-flex align-items-center">
+    <div class="container">
+        <div class="row align-items-center">
+            
+            <div class="col-md-6 text-center text-md-start">
+                    <h1 class="display-3 fw-bold">
+                        X-FIT Pro<br>
+                        <span class="text-primary">Smartwatch</span>
+                    </h1>
+
+                <p class="lead mt-3">
+                    Experience <strong>next-generation fitness tracking</strong> designed for 
+                    athletes, professionals, and everyday champions.
+                </p>
+
+                <p>
+                    Monitor your <strong>heart rate</strong>, track your <strong>performance</strong>, 
+                    and optimize your <strong>recovery</strong> — all from your wrist.
+                </p>
+
+                <a href="features.html" class="btn btn-primary btn-lg mt-3">
+                    Explore Features
+                </a>
+            </div>
+
+            <div class="col-md-6 text-center">
+                <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12"
+                    class="img-fluid"
+                    alt="X-FIT Pro Smartwatch">
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="py-5 bg-light">
+    <div class="container text-center">
+        <h2 class="mb-4">Why Choose X-FIT Pro?</h2>
+
+        <div class="row">
+            <div class="col-md-4">
+                <h5>Performance Tracking</h5>
+                <p>Advanced sensors provide accurate data to improve your workouts.</p>
+            </div>
+
+            <div class="col-md-4">
+                <h5>Modern Design</h5>
+                <p>Sleek, lightweight, and stylish for everyday wear.</p>
+            </div>
+
+            <div class="col-md-4">
+                <h5>Long Battery Life</h5>
+                <p>Up to 7 days of battery life on a single charge.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-dark text-white text-center p-4">
+    <p>© 2026 X-FIT Pro Smartwatch</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    const faders = document.querySelectorAll('.fade-in');
+
+    const appearOptions = {
+        threshold: 0.3
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(
+        entries,
+        appearOnScroll
+    ) {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                return;
+            } else {
+                entry.target.classList.add('show');
+                appearOnScroll.unobserve(entry.target);
+            }
+        });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+        appearOnScroll.observe(fader);
+    });
+</script>
+
+</body>
+</html>
